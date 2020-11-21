@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color=purple>
+    <ion-title>Novo Documento</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color=purple >Dados</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="barcode-outline" slot="start" color=purple></ion-icon>
+        <ion-label position="floating" color=purple>Descricão</ion-label>
+        <ion-input [(ngModel)]="data.description"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="person-circle-outline" slot="start" color=purple></ion-icon>
+        <ion-label position="floating" color=purple>Arquivo</ion-label>
+        <ion-input [(ngModel)]="data.data"></ion-input>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" (click)="doConfirmar()" expand="full" color=purple>Confirmar</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="medium" (click)="doLimpar()" expand="full">Limpar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

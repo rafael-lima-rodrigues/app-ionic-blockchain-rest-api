@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="purple">
+    <ion-title slot="start" color="light"><b>Login</b></ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="light" (click)="doCreateAccount()">
+        <ion-icon slot="icon-only" name="people-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="./assets/icon/26824.jpg"></ion-img>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="finger-print-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [(ngModel)]="data.username" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input [(ngModel)]="data.password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button color="purple" (click)="doConfirmar()" expand="full">Confirmar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" (click)="doLimpar()" expand="full">Limpar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

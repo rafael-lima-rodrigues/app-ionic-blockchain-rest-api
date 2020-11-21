@@ -1,0 +1,41 @@
+
+#container {
+  text-align: center;
+  line-height: 40px;
+  position: static;
+  font-size: 22px;
+  padding-top: 20%;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transform: translateY(-50%);
+  font-weight: bolder;
+}
+
+.ion-color-purple {
+  --ion-color-base: #6c1bb8;
+  --ion-color-base-rgb: 255,255,0;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 0,0,0;
+  --ion-color-shade: #49038a;
+  --ion-color-tint: #5b00b1;
+} 
+
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}

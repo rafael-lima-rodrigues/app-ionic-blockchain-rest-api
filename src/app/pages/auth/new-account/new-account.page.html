@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color=purple>
+    <ion-title>Criar Conta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Dados</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="barcode-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="userData.username"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label position="floating">email</ion-label>
+        <ion-input [(ngModel)]="userData.email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="lock-open-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input [(ngModel)]="userData.password" type="password"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Permissão</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      
+        
+        <ion-item *ngFor="let Role of Roles">
+          <input type="checkbox" (change)="doRoles(Role.role, $event.target.checked)">
+         <ion-label slot="end">{{Role.role}}</ion-label><br>
+        </ion-item> 
+    
+    </ion-card-content>
+    
+  </ion-card>
+
+  <ion-row>
+    <ion-col>
+      <ion-button color="purple" (click)="doConfirm()" expand="full">Confirmar</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="medium" (click)="doClear()" expand="full">Limpar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

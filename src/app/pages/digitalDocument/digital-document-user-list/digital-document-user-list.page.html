@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="purple">
+    <ion-title>Meus Documentos</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-card  *ngFor="let digitalDocument of digitalDocuments">
+    <ion-card-header>
+      <ion-card-subtitle color="purple">ID: {{digitalDocument.id}}</ion-card-subtitle>
+      <ion-card-title color="purple">{{digitalDocument.description}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content >
+      <ion-row>
+        <ion-label color="purple">Data: {{digitalDocument.data}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label color="purple">Owner: {{digitalDocument.userIdOwner}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label color="purple">Type: {{digitalDocument.typeDoc}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label color="purple">Signature: {{digitalDocument.signature | json}}</ion-label>
+      </ion-row>
+
+      <ion-item lines="none">
+        <ion-button color="purple" fill="clear" size="small" (click)="doRemover(digitalDocument)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button color="purple" fill="clear" size="small" (click)="doAssinar(digitalDocument)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
